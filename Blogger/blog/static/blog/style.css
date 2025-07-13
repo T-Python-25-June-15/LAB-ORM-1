@@ -1,0 +1,107 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Header */
+  header {
+    background-color: #343a40;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  header nav a {
+    margin-left: 1rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  header nav a:hover {
+    color: #ffc107;
+  }
+  
+  /* Main Layout */
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Post Cards */
+  article {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
+  article:hover {
+    transform: translateY(-3px);
+  }
+  
+  article h3 {
+    margin-top: 0;
+    color: #343a40;
+  }
+  
+  article small {
+    color: #888;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Form Styling */
+form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  form input[type="text"],
+  form textarea,
+  form input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0.5rem 0 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }

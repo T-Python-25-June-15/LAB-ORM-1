@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block title %}Home - Blogger{% endblock %}
+{% block content %}
+  <h2>Latest Posts</h2>
+  {% for post in posts %}
+    <article>
+      <h3>{{ post.title }}</h3>
+      <small>{{ post.published_at }}</small>
+      <p>{{ post.content }}</p>
+    </article>
+  {% empty %}
+    <p>No posts available.</p>
+  {% endfor %}
+{% endblock %}
