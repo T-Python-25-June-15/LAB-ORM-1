@@ -1,0 +1,25 @@
+
+
+{% extends "main/base.html" %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h1 class="mb-4 text-center">All Posts</h1>
+    {% for post in posts %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title">{{ post.title }}</h4>
+                <p class="card-text">{{ post.content }}</p>
+                <div class="text-muted small">
+                    {{ post.published_date|date:"Y-m-d H:i" }}
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p class="text-muted text-center">There are no posts currently.</p>
+    {% endfor %}
+    <div class="text-center mt-4">
+        <a href="{% url 'main:post_create' %}" class="btn btn-primary">Add New Post</a>
+    </div>
+</div>
+{% endblock content %}
