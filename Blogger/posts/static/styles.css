@@ -159,9 +159,23 @@ footer p {
     margin: 10px 0;
 }
 img {
-    max-width: 150px;  
+    max-width: 140px;  
     height: auto;     
     margin-right: 20px; 
     border-radius: 8px; 
     object-fit: cover; 
+}
+ 
+.delete-btn {
+    padding: 2px 16px;
+    font-size: 14px;
+    border-radius: 35px;
+    background-color: #e31616;
+    color: #f5d2d2;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn:hover{
+    background-color: #0056b3; 
 }

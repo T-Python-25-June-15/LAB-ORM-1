@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post
 from .forms import PostForm
+ 
+
 
 def home(request):
     posts = Post.objects.all().order_by('-published_at')
@@ -15,3 +17,8 @@ def add_post(request):
     else:
         form = PostForm()
     return render(request, 'posts/add_post.html', {'form': form})
+
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    post.delete()
+    return redirect('home') 
