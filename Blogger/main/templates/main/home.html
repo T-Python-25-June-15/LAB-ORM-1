@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+  <section class="home-section">
+    <div class="home-content">
+      <h2> Publish Your Posts, and Passions</h2>
+      <p>This is a webiste diplays the latest post that I have done and my passions</p> 
+      <br> 
+      <h2> My Latest posts: </h2>
+
+      <div class="row1">
+
+        {% for blogg in bloggers %}
+        <div class="col">
+            <div class="spin"> 
+                <div class=" box d-flex flex-column justify-content-center align-items-center h-100"> 
+                    <br>
+                    <h3> {{blogg.title}}</h3>
+                    <p> {{blogg.content}}</p>
+                    <p> {{blogg.published_at}}</p>
+                </div> 
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <a href="{% url 'blogger_app:blogg_view' %}"> <button class="post-button">Add new Posts</button> </a>
+    </div>
+  </section>
+
+
+{% endblock %}

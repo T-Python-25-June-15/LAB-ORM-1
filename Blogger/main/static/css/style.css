@@ -1,0 +1,237 @@
+*{
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+.page{
+    padding: 3rem;
+}
+
+nav{
+    background-color: rgb(241, 199, 206);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.right-navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.right-navigation a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.right-navigation a:hover{
+    text-decoration: none;
+    color: gray;
+    font-size: 18px;
+}
+
+.right-navigation .active{
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.home-section{
+    padding-top: 2rem;
+}
+
+.contact-section{
+    padding-top: 2rem;
+}
+
+.post-button{
+    background-color:rgb(241, 199, 206);
+    color: black;
+    font-size: 15px;
+    border-radius: 60px;
+    border: none;
+    width: 200px;
+    margin-top: 2rem;
+
+}
+
+.row{
+    padding-top: 2rem;
+}
+
+.btn.btn-primary{
+    background-color:rgb(241, 199, 206);
+    color: black;
+    font-size: 15px;
+    border-radius: 60px;
+    border: none;
+}
+
+.row1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+.col {
+  width: 100%;
+  max-width: 400px;
+}
+
+.spin {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  min-height: 300px;
+  padding: 4px;
+  border-radius: 20px;
+  background: transparent;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.spin::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: conic-gradient(
+    rgb(241, 199, 206),
+    white,
+    rgb(217, 124, 140)
+  );
+  animation: spin 5s linear infinite;
+  border-radius: 20px;
+  transform-origin: center center;
+}
+
+
+
+.box {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 1;
+  min-height: 300px; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* Dark Mode*/
+
+.dark nav{
+    background-color: black;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.dark .page{
+    padding: 3rem;
+    background-color: #1e1e1e;
+    color:white
+}
+
+.dark .right-navigation a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.right-navigation .active{
+    color: black;
+}
+.dark .btn.btn-primary{
+    background-color:white;
+    color: black;
+    font-size: 15px;
+    border-radius: 60px;
+    border: none;
+}
+
+.dark .right-navigation a:hover{
+    text-decoration: none;
+    color: brown;
+    font-size: 18px;
+}
+
+.dark .post-button{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    border-radius: 60px;
+    border: none;
+    width: 200px;
+    margin-top: 2rem;
+
+}
+
+.dark .spin::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: conic-gradient(
+    white,
+    gray,
+    white
+  );
+  animation: spin 5s linear infinite;
+  border-radius: 20px;
+  transform-origin: center center;
+}
+
+
+
+.dark .box {
+  position: relative;
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
