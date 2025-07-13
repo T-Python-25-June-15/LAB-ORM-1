@@ -5,8 +5,8 @@
     <ul>
         {% for post in posts %}
             <li style="display: flex; align-items: center; margin-bottom: 20px;">
-                {% if post.media %} 
-                    <img src="{{ post.media.url }}" alt="{{ post.title }}" style="max-width: 150px; margin-right: 20px;">
+                {% if post.media %}
+                    <img src="{{ post./media.url }}" alt="{{ post.title }}">
                 {% endif %}
                 <div>
                     <h3>{{ post.title }}</h3>
