@@ -1,0 +1,47 @@
+ html, body {
+    height: 100%;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+  }
+  footer {
+    background-color: #f8f9fa; /* optional */
+  }
+ 
+
+    body.dark {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    body.dark a {
+      color: #ffffff;
+    }
+
+    body.dark .navbar {
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    body.dark .navbar a:hover {
+      color: #bbbbbb;
+    }
+
+    body.dark footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+    }
+
+    body.dark a.nav-link {
+  color: #bbbbbb !important;
+}
+  body.dark a {
+    color: white !important;
+  }
