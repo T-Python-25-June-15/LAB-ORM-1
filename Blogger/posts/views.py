@@ -5,7 +5,7 @@ from .forms import PostForm
 
 def home(request):
     
-    posts = Post.objects.all().order_by('-published_at')
+    posts = Post.objects.all().order_by('published_at')
     return render(request,'posts/home.html',{'posts':posts})
 
 def add_post(request):
