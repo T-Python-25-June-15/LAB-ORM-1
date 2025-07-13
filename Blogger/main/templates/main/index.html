@@ -1,0 +1,27 @@
+{% extends 'main/base.html'%}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block main-title%}
+All Posts
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+    {% if post.is_published == 1%}
+    <div class="post-card-container">
+        <div class="post-title">
+            {{post.title}}
+        </div>
+        <div class="post-content">
+            {{post.content}}
+        </div>
+        <div class="post-published">
+            {{post.published_at}}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger | {%block title%} {%endblock%}</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+        <div class="top-banner-container">
+            <div class="top-banner-elements-container">
+                <a href="{% url 'main:add_post'%}">Add Post</a>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="logo"><a>Blogger</a></div>
+        </div>
+        <div class="navigation-links-container">
+            <a href="{% url 'main:home_view'%}">Home</a>
+        </div>
+
+        <div class="content-container">
+            <h1>{% block main-title%}{% endblock %}</h1>
+            <br>
+            {% block content%}
+            {% endblock %}
+        </div>
+
+        <div class="flower-1">
+            <img src= "{% static 'images/elements new1_02.png'%} ">
+        </div>
+</body>
+</html>
