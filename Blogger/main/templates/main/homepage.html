@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Latest Posts{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Latest Posts</h1>
+        <hr>
+
+        {% for post in posts %}
+            <section class="mb-5 p-3 border rounded">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content }}</p>
+                <p><strong>Status:</strong> {{ post.is_published }}</p>
+                <p><strong>Date:</strong> {{ post.published_at }}</p>
+            </section>
+        {% empty %}
+            <p>No posts available.</p>
+        {% endfor %}
+
+        <a href="{% url 'main:create_post_view' %}" class="btn btn-primary mt-3">Create New Post</a>
+    </div>
+{% endblock %}
