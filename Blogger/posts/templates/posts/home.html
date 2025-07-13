@@ -5,14 +5,14 @@
     <ul>
         {% for post in posts %}
             <li style="display: flex; align-items: center; margin-bottom: 20px;">
-                {% if post.image %}
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 150px; margin-right: 20px;">
-{% endif %}
-<div>
-  <h3>{{ post.title }}</h3>
-  <p>{{ post.content|truncatewords:30 }}</p>
- <small>Published at {{ post.published_at }}</small>
-</div>
+                {% if post.media %} 
+                    <img src="{{ post.media.url }}" alt="{{ post.title }}" style="max-width: 150px; margin-right: 20px;">
+                {% endif %}
+                <div>
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.content|truncatewords:30 }}</p>
+                    <small>Published at {{ post.published_at }}</small>
+                </div>
             </li>
         {% endfor %}
     </ul>

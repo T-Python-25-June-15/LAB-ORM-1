@@ -5,7 +5,4 @@ class Post(models.Model):
     content = models.TextField()
     is_published = models.BooleanField(default=True)
     published_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='posts/', null=True, blank=True)
-
-    def __str__(self):
-        return self.title
+    media = models.ImageField(upload_to='posts/', null=True, blank=True) 
