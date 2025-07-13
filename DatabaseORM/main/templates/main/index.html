@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Home - Page
+{% endblock %}
+
+{% block content %}
+<main class="blog-container">
+
+    {% for blog in blogs %}
+
+        {% if blog.is_published == True %}
+        <div class="blog-card">
+            <h2 class="blog-title">{{blog.title}}</h2>
+            <p class="blog-snippet">{{blog.content}}</p>
+            <p class="blog-snippet" style="color: cadetblue; font-weight: 700; font-size: 12px;">{{blog.published_at}}</p>
+            <a href="#" class="read-more">Read more</a>
+        </div>
+        {% endif %}
+
+    {% endfor %}
+
+
+</main>
+{% endblock %}

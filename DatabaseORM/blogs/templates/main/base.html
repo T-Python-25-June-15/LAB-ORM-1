@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial
+-scale=1">
+<title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css" class="css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">My Blog</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blogs">Add Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+{% block content %}
+{% endblock %}
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Nawaf Rights</p>
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blogs">Add Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
