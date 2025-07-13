@@ -2,15 +2,13 @@ from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm
 
-
 def home(request):
-    
-    posts = Post.objects.all().order_by('published_at')
-    return render(request,'posts/home.html',{'posts':posts})
+    posts = Post.objects.all().order_by('-published_at')
+    return render(request, 'posts/home.html', {'posts': posts})
 
 def add_post(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES) 
         if form.is_valid():
             form.save()
             return redirect('home')
