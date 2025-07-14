@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<main>
+
+    <h1>edit post:</h1>
+
+    <br><br>
+    <form action="{% url 'main:post_edit_view' post.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="image" style="margin-bottom: 10px;">image:</label>
+        <input type="file" name="image" id="image">
+        <h3>Previous image</h3>
+        <img src="{{post.image.url}}" width="10%">
+        
+        <label for="title" style="margin-bottom: 10px;">title:</label>
+        <input type="text" id="title" name="title"  required value="{{post.title}}">
+        
+        <label for="content" style="margin-bottom: 10px;">content:</label>
+        <textarea id="content" name="content" rows="5" required>{{post.content}}</textarea>
+        
+        <label for="is_published" style="margin-bottom: 10px;">publish status:</label>
+        <select id="is_published" name="is_published">
+            <option value="show" {%if post.is_published == True %} selected {%endif%}>show</option>
+            <option value="hide" {%if post.is_published == False %} selected {%endif%}>hide</option>
+        </select>
+
+        <label for="published_at" style="margin-bottom: 10px;">published_at:</label>
+        <input type="date" id="published_at" name="published_at" required value="{{post.published_at.isoformat}}">
+        
+        
+        <button type="submit" >update</button>
+    </form>
+  
+</main>
+
+{% endblock %}

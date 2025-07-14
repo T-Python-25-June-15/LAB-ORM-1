@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<main>
+
+    <h1>Add new post:</h1>
+
+    <br><br>
+    <form action="{% url 'main:add_post_view' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="image" style="margin-bottom: 10px;">image:</label>
+        <input type="file" name="image" id="image">
+        
+        <label for="title" style="margin-bottom: 10px;">title:</label>
+        <input type="text" id="title" name="title"  required>
+        
+        <label for="content" style="margin-bottom: 10px;">content:</label>
+        <textarea id="content" name="content" rows="5" required></textarea>
+        
+        <label for="is_published" style="margin-bottom: 10px;">publish status:</label>
+        <select id="is_published" name="is_published">
+            <option value="show">show</option>
+            <option value="hide">hide</option>
+        </select>
+
+        
+        
+        <button type="submit" >create</button>
+    </form>
+  
+</main>
+
+{% endblock %}
