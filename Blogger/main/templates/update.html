@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block title %} Update {% endblock %}
+
+{% block main %}
+
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="update-container">
+            <h2>Update {{post.title}}</h2>  
+            <img src="{{post.image.url}}">
+            <form action="{% url 'main:update_view' post.id %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" placeholder="Enter the Title" name="title" class="form-control" id="Title" value="{{post.title}}" required>
+                </div>
+
+                <div class="mb-3">
+                    <textarea name="content" placeholder="Type the content" class="form-control" required> {{post.content}} </textarea>
+                </div>
+
+
+
+                <div class="mb-3">
+                    <input type="datetime-local" name="published_at" class="form-control"
+                        value="{{ post.published_at|date:'Y-m-d\\TH:i' }}">
+                </div>
+
+                
+                <input type="file" name = "image" class="form-control">
+                
+
+
+                <button type="submit" class="btn btn-primary m-3">Update Post</button>
+                <a href="{% url 'main:detail_view' post.id %}" class="btn btn-primary m-3">Back</a>
+            </form>
+            
+        </div>
+    </div>
+
+
+{% endblock %}

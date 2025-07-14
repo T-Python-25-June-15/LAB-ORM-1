@@ -41,3 +41,36 @@ def add_view (request:HttpRequest):
             return redirect('main:home_view')
 
     return render(request, 'add.html', {"now":timezone.now()})
+
+def detail_view(request:HttpRequest, post_id:int):
+
+    post = Post.objects.get(pk=post_id)
+
+    return render(request, "details.html", {"post":post})
+
+
+def update_view(request:HttpRequest, post_id:int):
+
+    post = Post.objects.get(pk=post_id)
+
+    if request.method == 'POST':
+        post.title = request.POST['title']
+        post.content = request.POST['content']
+        post.published_at = request.POST['published_at']
+
+        if "image" in request.FILES: post.image = request.FILES["image"]
+        post.save()
+
+        return redirect("main:detail_view", post_id = post.id)
+
+
+    return render(request, "update.html", {"post":post})
+
+def delete_view(request:HttpRequest, post_id:int):
+
+    post = Post.objects.get(pk=post_id)
+    post.delete()
+
+    return redirect("main:home_view")
+
+
