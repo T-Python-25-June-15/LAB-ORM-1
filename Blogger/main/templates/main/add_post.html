@@ -4,21 +4,14 @@
 
 {% block content %}
 
-<h1> Add Post </h1>
-<div class="row">
-    <div class="col-6" >
-        <form class="d-flex flex-colum gap-2" action="{% url 'main:add_post_view' %}" method="post">
-            {% csrf_token %}
-            <input type="text" placeholder="Title" name="title" class="form-control">
-            <textarea placeholder="Content" name="content" class="form-control"></textarea>
+<h1 class="add-post-title">Add Post</h1>
 
-            <input type="submit" value="Add Post" class=" btn btn-primary"/>
-        
-        </form>
-    </div>
-</div>
+<form action="{% url 'main:add_post_view' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" placeholder="Title" name="title">
+    <textarea placeholder="Content" name="content"></textarea>
+    <input type="file" name="poster">
+    <input type="submit" value="Add Post">
+</form>
+
 {% endblock %}
-
-
-
-

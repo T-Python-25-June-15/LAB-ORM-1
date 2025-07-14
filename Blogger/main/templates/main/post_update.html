@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Update {{ post.title }} {% endblock %}
+
+{% block content %}
+
+<h1 class="update-post-title"> Update {{ post.title }} </h1>
+
+<form action="{% url 'main:post_update_view' post.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input type="text" name="title" value="{{ post.title }}" placeholder="Title">
+
+    <textarea name="content" placeholder="Content">{{ post.content }}</textarea>
+
+    <div>
+        <img src="{{ post.poster.url }}" alt="Current Image" class="update-img">
+        <input type="file" name="poster">
+    </div>
+
+    <input type="submit" value="Update Post">
+</form>
+
+{% endblock %}
+

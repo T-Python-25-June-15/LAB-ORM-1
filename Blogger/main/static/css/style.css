@@ -34,24 +34,21 @@ header {
   
 }
 
-.header-image img {
-  width: 600px;
-  max-width: 100%;
-  border-radius: 8px;
- 
-}
-
 header h1 {
-  font-size: 70px;
+  font-size: 60px;      
   color: #221141;
-  margin-bottom: 0;
+  margin-bottom: 10px;   
+  font-weight: 700;      
+  font-family: 'TikTok Sans', sans-serif; 
 }
 
 header p {
   padding-left: 10px;
-  margin-top: 0;  
-  font-size: 20px;
+  margin-top: 5px;      
+  font-size: 22px;      
   color: #221141;
+  font-weight: 500;      
+  font-family: 'TikTok Sans', sans-serif;  
 }
 
 .nav-bar {
@@ -60,9 +57,10 @@ header p {
   background: transparent;
   padding-left: 5px;
   width: 100%;
-  position: relative;
-  top: auto;
-  left: auto;
+  position: sticky; 
+  top: 0;            
+  left: 0;
+  z-index: 1000;    
   flex-wrap: wrap;
 }
 
@@ -99,9 +97,20 @@ main {
 
 .latest-posts-title {
   font-size: 30px;
-  color: #ebac73;
+  color: #746c78;
   text-align: left;
   margin: 10px;
+  font-weight: 700;      
+  font-family: 'TikTok Sans', sans-serif;  
+}
+
+.update-post-title {
+   font-size: 30px;
+  color: #746c78;
+  text-align: left;
+  margin: 10px;
+  font-weight: 700;      
+  font-family: 'TikTok Sans', sans-serif;  
 }
 
 .posts-container {
@@ -111,6 +120,15 @@ main {
   justify-content: left;
 }
 
+.add-post-title {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'TikTok Sans', sans-serif;
+  color: #746c78;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: left;
+}
 .post {
   background: white;
   border-radius: 8px;
@@ -120,20 +138,39 @@ main {
   max-width: 100%; 
   box-sizing: border-box;
 }
-
-.post h2 {
+.post a {
+  display: inline-block;
   color: #3c2567;
   margin-bottom: 10px;
+  font-size: 25px;
+  margin-top: 10px;
+  text-align: left;   
+  width: 100%;
+  text-decoration: none; 
+  font-weight: 700;      
+}
+
+.post a:hover {
+  transform: scale(1.0);
+  cursor: pointer;
+  color:#b4acbf;
 }
 
 .post p {
   opacity: 0.9;
-  margin-bottom: 10px;
+  margin-bottom: 25px; 
+}
+
+.post .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px; 
 }
 
 .post small {
   color: #666;
 }
+
 
 form {
   background: #fff;
@@ -141,6 +178,7 @@ form {
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
+
 
 input[type="text"],
 textarea {
@@ -152,7 +190,7 @@ textarea {
 }
 
 input[type="submit"] {
-  background: #1f1c2c;
+  background: #3c2567;
   color: white;
   border: none;
   padding: 12px 30px;
@@ -161,7 +199,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: #1f1c2c;
+  background:#3c2567;
+}
+
+
+input[type="file"]:hover {
+  border-color: #d6a86a; 
+  color: #d6a86a;
 }
 
 footer {
@@ -171,6 +215,53 @@ footer {
   color: white;
   text-align: center;
 }
+.post-detail {
+  background: white;
+  padding: 50px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 900px; 
+  margin: 40px auto; 
+  font-family: 'Roboto', sans-serif;
+  color: #3c2567;
+}
+
+.post-detail h1 {
+  font-weight: 700;
+  font-family: 'TikTok Sans', sans-serif;
+  font-size: 36px; 
+  margin-bottom: 20px;
+  color: #221141;
+  font-family: "TikTok Sans", sans-serif; 
+}
+
+.post-detail img {
+  display: block;
+  margin: 0 auto 20px auto; 
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post-detail p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.post-detail small {
+  color: #666;
+  font-size: 14px;
+}
+
+.update-img {
+  width: 90px;  
+  height: auto;
+  border-radius: 8px;
+}
+
 
 @media (max-width: 992px) {
   .header-flex {
