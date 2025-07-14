@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h2 class="mb-4">✏️ Edit Post</h2>
+
+<form method="post" enctype="multipart/form-data" class="bg-white p-4 shadow-sm rounded">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" id="title" value="{{ post.title }}" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea name="content" id="content" rows="5" class="form-control" required>{{ post.content }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" class="img-thumbnail mb-2" width="150">
+        {% endif %}
+        <input type="file" name="image" id="image" class="form-control">
+    </div>
+
+    <div class="form-check mb-3">
+        <input type="checkbox" name="is_published" id="is_published" class="form-check-input" {% if post.is_published %}checked{% endif %}>
+        <label for="is_published" class="form-check-label">Published</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
