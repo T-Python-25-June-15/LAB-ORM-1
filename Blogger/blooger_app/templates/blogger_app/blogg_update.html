@@ -1,0 +1,34 @@
+{% extends 'main/base.html'%}
+
+{% load static %}
+
+{% block title %}
+Update Page
+{% endblock %}
+
+{% block content %}
+<h1> Update {{blogg.title}}</h1>
+<div class="row"> 
+  <div class="col-6">
+    <form class="d-flex flex-column gap-2" action="{% url 'blogger_app:blogg_update_view' blogg.id%}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" placeholder="Title" name="title" class="form-control" value="{{blogg.title}}" />
+      <textarea placeholder="Content" name="content" class="form-control">{{blogg.content}}</textarea>
+
+      <select class="form-control" aria-label="Default select example" name="is_published">
+        <option value="True" {% if blogg.is_published == '1' %} selected {% endif %}>True</option>
+        <option value="False" {% if blogg.is_published == '0' %} selected {% endif %}>False</option>
+      </select>
+      <input type="datetime-local" name="published_at" class="form-control" value="{{blogg.published_at.isoformat}}" />
+      <div class="row"> 
+        <div class="col-3"> 
+            <img src="{{blogg.poster.url}}" class="w-100" >
+        </div>
+
+      </div>
+      <input type="file" name="poster" class="form-control"/>
+      <button type="submit" value="Update Blogg" class="btn btn-primary">Update Blogg</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

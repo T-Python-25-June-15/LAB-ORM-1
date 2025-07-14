@@ -21,8 +21,9 @@ Home Page
             <div class="spin"> 
                 <div class=" box d-flex flex-column justify-content-center align-items-center h-100"> 
                     <br>
-                    <h3> {{blogg.title}}</h3>
-                    <p> {{blogg.content}}</p>
+                    <img src="{{blogg.poster.url}}" class="image-post" width="200px" height="200px"> 
+                    <br>
+                    <a href="{% url 'blogger_app:blogg_detail_view' blogg.id %}"><h3> {{blogg.title}}</h3></a>
                     <p> {{blogg.published_at}}</p>
                 </div> 
             </div>

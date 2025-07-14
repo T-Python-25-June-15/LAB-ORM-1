@@ -68,8 +68,14 @@ nav{
 .btn.btn-primary{
     background-color:rgb(241, 199, 206);
     color: black;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 60px;
+    border: none;
+}
+
+.btn.btn-danger{
+    font-size: 18px;
+    border-radius: 80px;
     border: none;
 }
 
@@ -140,9 +146,16 @@ nav{
     transform: rotate(360deg);
   }
 }
+.spin a{
+  text-decoration: none;
+  color: rgb(241, 199, 206);
+}
 
+.spin a:hover{
+  text-decoration: none;
+  color: gray;
 
-
+}
 
 /* Dark Mode*/
 
@@ -184,7 +197,16 @@ nav{
     color: brown;
     font-size: 18px;
 }
+.dark .spin a{
+  text-decoration: none;
+  color: white;
+}
 
+.dark .spin a:hover{
+  text-decoration: none;
+  color: brown;
+
+}
 .dark .post-button{
     background-color: white;
     color: black;
