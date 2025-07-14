@@ -32,10 +32,9 @@
             <div class="card h-100 shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title">{{ blog.title }}</h5>
-                    <p class="card-text text-muted small">
-                        {{ blog.published_at }}
-                    </p>
-                    <p class="card-text">{{ blog.content }}</p>
+                    <img class="w-100" src="{{blog.image.url}}" />
+                    <p class="card-text text-muted small">{{ blog.published_at }}</p>
+                    <p class="card-text">{{ blog.content|truncatewords:"30"}}</p>
                 </div>
             </div>
         </div>

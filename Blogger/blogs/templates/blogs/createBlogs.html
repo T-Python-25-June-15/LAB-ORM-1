@@ -8,7 +8,7 @@
 <div class="container py-5">
     <h2 class="mb-4">Add a New Blog</h2>
 
-    <form action="{% url 'blogs:createBlogs_view' %}" method="post" class="d-flex flex-column gap-3">
+    <form action="{% url 'blogs:createBlogs_view' %}" method="post" class="d-flex flex-column gap-3" enctype="multipart/form-data">
         {% csrf_token %}
 
         <input type="text" placeholder="Title" name="title" class="form-control" />
@@ -23,6 +23,7 @@
         <label for="published_at" class="form-label mb-0">Published at (leave empty to use current date)</label>
         <input type="date" name="published_at" id="published_at" class="form-control" />
 
+        <input type="file" name="image" id="image" class="form-control" />
 
         <input type="submit" value="Create Blog" class="btn btn-primary" />
     </form>
