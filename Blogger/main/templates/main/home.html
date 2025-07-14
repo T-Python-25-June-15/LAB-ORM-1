@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h2>All Posts</h2>
+{% if posts %}
+    <ul class="posts-list">
+        {% for post in posts %}
+        <li>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content|linebreaksbr }}</p>
+            <small>Published on {{ post.created_at|date:"M d, Y" }}</small>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts yet.</p>
+{% endif %}
+{% endblock %}
