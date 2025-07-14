@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <h1>Latest Posts</h1>
+    <p class="text-2">Discover the recent stories from our community</p>
+</div>
+
+{% if posts %}
+    {% for post in posts %}
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2 class="post-title mb-0">{{ post.title }}</h2>
+        </div>
+        <div class="card-body">
+            <div class="post-date mb-3">
+                published at {{ post.published_at }}
+            </div>
+            <div class="post-content">
+                {{ post.content }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <div class="text-center">
+        <h3>No Posts Yet</h3>
+        <p class="text-2">Be the first to share your stories</p>
+        <a href="{% url 'add_post' %}" class="btn btn-primary">
+            Create Your First Post
+        </a>
+    </div>
+{% endif %}
+
+<div class="text-center mt-4">
+    <a href="{% url 'add_post' %}" class="btn btn-success">
+        Add New Post
+    </a>
+</div>
+{% endblock %} 
