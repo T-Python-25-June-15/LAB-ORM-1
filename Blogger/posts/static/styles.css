@@ -192,7 +192,7 @@ img {
     border-radius: 8px; 
     object-fit: cover; 
 }
- 
+ /* -----------------delete & update style----------- */
 .delete-btn {
     padding: 2px 16px;
     font-size: 14px;
@@ -205,4 +205,42 @@ img {
 
 .delete-btn:hover{
     background-color: #af2d2db9; 
+}
+.update-btn {
+    padding: 2px 16px;
+    font-size: 14px;
+    border-radius: 35px;
+    background-color: #08d457;
+    color: #ffffff;
+    padding: 0;
+    cursor: pointer;
+}
+.update-btn:hover{
+    background-color: #08d457;
+}
+.save-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.save-btn:hover {
+    background-color: #555;
+}
+
+.cancel-btn {
+    padding: 1px 19px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.cancel-btn:hover {
+    background-color: #f0f0f0;
 }

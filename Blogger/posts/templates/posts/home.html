@@ -13,7 +13,8 @@
                     <p>{{ post.content|truncatewords:30 }}</p>
                     <small>Published at {{ post.published_at }}</small>
                     <div>
-                        <a href="{% url 'delete_post' post.id %}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
+                        <a href="{% url 'update_post' post.id %} "class= "update-btn" onclick="return confirm('you  want update this post?')">Edit</a>
+                        <a href="{% url 'delete_post' post.id %}" class="delete-btn"  onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
                     </div>
                 </div>
             </li>
