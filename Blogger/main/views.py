@@ -12,6 +12,6 @@ def home_view(request: HttpRequest) -> HttpResponse:
 
 def create_post_view(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
-        post = Post(title=request.POST.get('title') , content=request.POST.get('content') , is_published= bool(request.POST.get('is_published')), published_at= request.POST.get('published_at'))
+        post = Post(title=request.POST.get('title') , content=request.POST.get('content') , is_published= bool(request.POST.get('is_published')), published_at= request.POST.get('published_at'), poster=request.FILES.get('poster'))
         post.save()
     return render(request, 'main/new_post.html')
