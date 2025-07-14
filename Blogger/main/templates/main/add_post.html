@@ -6,7 +6,7 @@
 
 <div class="container mt-5">
     <h1 class="mb-4 text-center">Add New Post</h1>
-    <form method="post" class="p-4 shadow rounded bg-light">
+    <form method="post" class="p-4 shadow rounded bg-light" action="{% url 'main:post_create' %}" enctype="multipart/form-data">
         {% csrf_token %}
         
         <div class="mb-3">
@@ -17,6 +17,11 @@
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
             <textarea name="content" id="content" rows="6" class="form-control" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" name="image" id="image" rows="6" class="form-control" required>
         </div>
 
         <div class="form-check mb-3">
