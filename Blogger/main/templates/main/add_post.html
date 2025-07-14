@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Add New Post {% endblock %}
+
+{% block content %}
+
+<h1 class="add-post-title">Add Post</h1>
+
+<form action="{% url 'main:add_post_view' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" placeholder="Title" name="title">
+    <textarea placeholder="Content" name="content"></textarea>
+    <input type="file" name="poster">
+    <input type="submit" value="Add Post">
+</form>
+
+{% endblock %}

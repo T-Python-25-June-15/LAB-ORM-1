@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+<div class="post-detail">
+  <h1>{{ post.title }}</h1>
+  <img src="{{ post.poster.url }}" alt="poster image">
+  
+  <p style="opacity: 0.9; margin-bottom: 30px;">{{ post.content }}</p>
+
+  <small>Published at: {{ post.published_at }}</small>
+  
+  <div class="buttons" style="margin-top: 10px; display: flex; justify-content: flex-end; gap: 10px;">
+  <a href="{% url 'main:post_update_view' post.id %}" 
+     style="background-color: #3c2567; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; width: 120px; text-align: center;">Update</a>
+
+<button type="button" 
+        data-bs-toggle="modal" data-bs-target="#exampleModal"
+        style="background-color: #746c78; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 120px; text-align: center;">
+  Delete
+</button>
+</div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> Delete</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are You sure you want th delete post {{post.title}} ?
+      </div>
+     <div class="modal-footer">
+  <button type="button" 
+          data-bs-dismiss="modal"
+          style="background-color: #746c78; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 120px; text-align: center;">Close</button>
+
+  <a href="{% url 'main:post_delete_view' post.id %}" 
+     style="background-color: #3c2567; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; width: 120px; text-align: center;">Delete</a>
+</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

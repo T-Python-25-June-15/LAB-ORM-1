@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h1 class="latest-posts-title"> LATEST POSTS</h1>
+    <div class="posts-container">
+      {% for post in posts %}
+        <div class="post">
+          <img src="{{ post.poster.url }}" alt="poster image" style="width: 200px; height:auto;">
+           <a href="{% url 'main:post_detail_view' post.id %}">{{ post.title }}</a>
+            <small>Published at: {{ post.published_at }}</small>
+        </div>
+      {% endfor %}
+  </div>
+{% endblock %}
