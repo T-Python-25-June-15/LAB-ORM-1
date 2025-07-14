@@ -10,28 +10,34 @@
         <div class="col-md-8 col-lg-6">
             <div class="card shadow">
                 <div class="card-body p-4">
-                    <form action="{% url 'blog:create_post_view' %}" method="post"  >
-                        {% csrf_token %}
+                 <form action="{% url 'blog:create_post_view' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
 
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" name="title" id="title" class="form-control" placeholder="Enter post title" required>
-                        </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Enter post title" required>
+    </div>
 
-                        <div class="mb-3">
-                            <label for="content" class="form-label">Content</label>
-                            <textarea name="content" id="content" class="form-control" rows="5" placeholder="Write your content here..." required></textarea>
-                        </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea name="content" id="content" class="form-control" rows="5" placeholder="Write your content here..." required></textarea>
+    </div>
 
-                        <div class="form-check mb-3">
-                            <input type="checkbox" name="is_published" class="form-check-input" id="is_published" checked>
-                            <label class="form-check-label" for="is_published">Publish Now</label>
-                        </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input type="file" name="image" id="image" class="form-control">
+    </div>
 
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Create Post</button>
-                        </div>
-                    </form>
+    <div class="form-check mb-3">
+        <input type="checkbox" name="is_published" class="form-check-input" id="is_published" checked>
+        <label class="form-check-label" for="is_published">Publish Now</label>
+    </div>
+
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Create Post</button>
+    </div>
+</form>
+
 
                 </div>
             </div>

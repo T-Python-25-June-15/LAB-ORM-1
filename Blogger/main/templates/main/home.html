@@ -8,34 +8,61 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
 
-    {% if blogs %}
+    <div class="container">
+            <div class="row">
+                {% if blogs %}
         {% for blog in blogs %}
-        <div class="row mx-5">
-            <div class="card-group mt-3">
-                <div class="card">
-                    <h5 class="card-header">{{ blog.title }}</h5>
-                    <div class="card-body">
+                <div class="col-lg-4 col-md-6 col-sm-12 my-3">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ blog.title }}</h5>
                         <p class="card-text">{{ blog.content }}</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">{{ blog.published_at }}</small>
+                        <small>{{ blog.published_at }}</small>
+                   
+                        <div class="d-flex justify-content-center my-2">
+                            <a href="{% url 'blog:blog_detail_view' blog.id %}" class="btn btn-dark">view details</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {% endfor %}
+           
+               
+              {% endfor %}
     {% else %}
         <p class="text-center mt-4">No blogs to display.</p>
     {% endif %}
 
+        </div>
+    </div>
+
+
     <form action="{% url 'blog:delete_all_objects_view' %}" method="post">
         {% csrf_token %}
         <div class="d-grid gap-2 col-6 mx-auto my-5">
-  <button class="btn btn-primary" type="submit">Create new blog</button>
+  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">delete</button>
+
 </div>
     </form>
 
-</div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Post</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are You sure you want to delete all of them ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="{% url 'blog:delete_all_objects_view' %}" class="btn btn-danger">delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 {% endblock %}
