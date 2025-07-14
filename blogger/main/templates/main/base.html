@@ -10,15 +10,16 @@
 <body>
   <header class="bg-dark text-white p-3">
     <div class="container">
-      <h1><a class="text-white text-decoration-none" href="{% url 'home' %}">Blogger</a></h1>
+      <h1><a class="text-white text-decoration-none" href="{% url 'main:home' %}">Blogger</a></h1>
       <nav>
-        <a class="btn btn-light btn-sm" href="{% url 'home' %}">Home</a>
-        <a class="btn btn-light btn-sm" href="{% url 'add_post' %}">Add Post</a>
+        <a class="btn btn-light btn-sm" href="{% url 'main:home' %}">Home</a>
+        <a class="btn btn-light btn-sm" href="{% url 'main:add_post' %}">Add Post</a>
+        
       </nav>
     </div>
   </header>
   
-  <main class="container mt-4">
+  <main>
     {% block content %}{% endblock %}
   </main>
   
