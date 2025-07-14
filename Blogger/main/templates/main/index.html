@@ -26,21 +26,19 @@
     <div class="row">
         {% for blog in blogs %}
         
-        {% if blog.is_published %}
+
 
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
+                <a href="{% url 'blogs:detailBlog_view' blog.id %}" class="text-decoration-none text-dark"><div class="card-body">
                     <h5 class="card-title">{{ blog.title }}</h5>
                     <img class="w-100" src="{{blog.image.url}}" />
                     <p class="card-text text-muted small">{{ blog.published_at }}</p>
-                    <p class="card-text">{{ blog.content|truncatewords:"30"}}</p>
-                </div>
+                    <p class="card-text">{{ blog.content|truncatewords:"30"}} Read More</p>
+                </div></a>
             </div>
         </div>
-        {% endif %}
-        {% empty %}
-            <p class="text-center">No blog posts found.</p>
+
         {% endfor %}
     </div>
 </div>

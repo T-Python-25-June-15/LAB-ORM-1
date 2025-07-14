@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Update blogs{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="mb-4">Update Blog</h2>
+
+
+    <form action="{% url 'blogs:updateBlog_view' blog.id %}" method="post" class="d-flex flex-column gap-3" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="text" placeholder="Title" name="title" class="form-control" value="{{blog.title}}"/>
+
+        <textarea placeholder="Content" name="content" rows="5" class="form-control">{{blog.content}}</textarea>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_published" id="publishCheck" {% if blog.is_published %} checked {% endif %}>
+            <label class="form-check-label" for="publishCheck">Check the box if you want the bloge to be published.</label>
+        </div>
+
+        <label for="published_at" class="form-label mb-0">Published at (leave empty to use current date)</label>
+        <input type="date" name="published_at" id="published_at" class="form-control" value="{{blog.published_at.isoformat}}" />
+
+        <div class="row align-items-center">
+            <div class="col-2">
+                <img src="{{ blog.image.url }}" class="w-100 rounded"  alt="Blog Image">
+            </div>
+            <div class="col ms-auto">
+                <input type="file" name="image" id="image" class="form-control" />
+            </div>
+        </div>
+
+        <input type="submit" value="Update Blog" class="btn btn-primary" />
+    </form>
+</div>
+
+{% endblock %}
