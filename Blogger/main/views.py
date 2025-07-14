@@ -7,7 +7,7 @@ from django.utils import timezone
 # Create your views here.
 
 def home_view(request:HttpRequest):
-
+    
     # get all posts
     posts = Post.objects.all()
 
