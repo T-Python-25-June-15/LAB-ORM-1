@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<main>
+    <div class="post-details">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <img src="{{ post.image.url }}" class="post-image">
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+        </div>
+        <div class="post-details-part">
+            <span><strong>Publish Status:</strong> {{ post.is_published }}</span>
+            <span><strong>Published At:</strong> {{ post.published_at }}</span>
+        </div>
+    </div>
+</main>
+{% endblock %}

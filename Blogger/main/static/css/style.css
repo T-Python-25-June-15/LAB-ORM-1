@@ -74,3 +74,64 @@ button {
     color:white;
     cursor: pointer;
 }
+
+.viewbutton{
+    background-color: blue;
+    color: white;
+    padding:0.5rem;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+.editbutton{
+    background-color: black;
+    color: white;
+    padding:0.5rem;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+.deletebutton{
+    background-color: red;
+    color: white;
+    padding:0.5rem;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+
+.post-details{
+    width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.post-title{
+    font-size: 3rem; 
+    text-align: center; 
+    margin-bottom: 3rem;
+     font-weight: bold;
+}
+
+.post-image{
+    border-radius: 2rem; 
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.post-content{
+    text-align: justify; 
+    font-size: 1.2rem; 
+    padding: 2rem; 
+    border-radius: 2rem; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-details-part{
+ margin-top: 3rem;
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center; 
+ width: 80%; 
+ border-top: 1px solid #ccc; 
+ padding-top: 2rem;
+}

@@ -12,19 +12,25 @@
     <table>
         <tr>
             <th>#</th>
+            <th>Image</th>
             <th>title</th>
-            <th>content</th>
             <th>publish status</th>
             <th>published at</th>
+            <th>Actions</th>
         </tr>
 
        {% for post in posts %}
        <tr>
        <td>{{post.id}}</td>
+       <td><img src="{{post.image.url}}" width="20%"></td>
        <td>{{post.title}}</td>
-       <td>{{post.content}}</td>
        <td>{{post.is_published}}</td>
        <td>{{post.published_at}}</td>
+       <td>
+        <a class="viewbutton" href="{% url 'main:post_details_view' post.id %}">view</a>
+        <a class="editbutton" href="{% url 'main:post_edit_view' post.id %}">edit</a>
+        <a class="deletebutton"  href="{% url 'main:post_delete_view' post.id %}" onclick="confirm('are you sure to delete post?')">delete</a>
+    </td>
     </tr>
        {% endfor %}
 
