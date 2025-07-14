@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% block title %} Home {% endblock %}
+
+
+{% block main%}
+
+<main class="blog-container">
+
+    </article>
+
+    {% if posts %}
+      {% for post in posts %}
+        <article class="post">
+          
+            
+            <a href="{% url 'main:detail_view' post.id %}"><h2 style="color: black;"> {{post.title}} </h2></a>
+            <a href="{% url 'main:detail_view' post.id %}"><img src="{{post.image.url}}" class="w-100"></a>
+
+        
+        </article>
+      {% endfor %}
+    {% else %}
+      <h3 style="margin-bottom: 2rem; text-align: center;">No posts available.</h3>
+    {% endif %}
+
+
+    
+    <a href="{% url 'main:add_view'%}" class="btn btn-primary w-100">Add Post</a>
+
+    
+</main>
+
+{% endblock %}
