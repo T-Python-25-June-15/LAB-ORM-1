@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block fileStyle %}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="latest">
+
+    <h2>Latest Posts</h2>
+
+    {% if posts %}
+    {% for post in posts %}
+    
+        <div class="post">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <p>Published at: {{ post.published_at }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+    {% else %}
+    <p>No posts yet.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
+ 

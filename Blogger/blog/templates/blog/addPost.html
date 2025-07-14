@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Add Post{% endblock %}
+
+{% block fileStyle %}
+
+<link rel="stylesheet" href="{% static 'css/addPost.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="adding">
+    <h2>Add a New Post</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="id_title">Title:</label><br>
+        <input type="text" name="title" id="id_title"><br><br>
+
+        <label for="id_content">Content:</label><br>
+        <textarea name="content" id="id_content" rows="6"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}
+ 
