@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h2 class="mb-4">🗒️ Latest Posts</h2>
+
+    {% for post in posts %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">   <a href="{% url 'blog:post_detail' post.id %}">
+                     {{ post.title }}
+                </a></h5>
+                <p class="card-text">{{ post.content }}</p>
+                <p class="text-muted mb-0">
+                    📅 Published on {{ post.published_at|date:"d M Y - h:i A" }}
+                </p>
+            </div>
+        </div>
+    {% empty %}
+        <div class="alert alert-warning">No posts yet.</div>
+    {% endfor %}
+{% endblock %}

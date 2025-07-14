@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h2 class="mb-4">➕ Add New Post</h2>
+
+    <form method="post" class="bg-white p-4 shadow-sm rounded">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" id="title" class="form-control" maxlength="2048" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea name="content" id="content" rows="5" class="form-control" required></textarea>
+        </div>
+
+        <div class="form-check mb-3">
+            <input type="checkbox" name="is_published" id="is_published" class="form-check-input" checked>
+            <label for="is_published" class="form-check-label">Publish now</label>
+        </div>
+        
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input type="file" name="image" id="image" class="form-control">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Publish</button>
+    </form>
+{% endblock %}
