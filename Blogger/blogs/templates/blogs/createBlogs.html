@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Add blogs{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="mb-4">Add a New Blog</h2>
+
+    <form action="{% url 'blogs:createBlogs_view' %}" method="post" class="d-flex flex-column gap-3">
+        {% csrf_token %}
+
+        <input type="text" placeholder="Title" name="title" class="form-control" />
+
+        <textarea placeholder="Content" name="content" rows="5" class="form-control"></textarea>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_published" id="publishCheck" checked>
+            <label class="form-check-label" for="publishCheck">Check the box if you want the bloge to be published.</label>
+        </div>
+
+        <label for="published_at" class="form-label mb-0">Published at (leave empty to use current date)</label>
+        <input type="date" name="published_at" id="published_at" class="form-control" />
+
+
+        <input type="submit" value="Create Blog" class="btn btn-primary" />
+    </form>
+</div>
+
+{% endblock %}
