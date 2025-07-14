@@ -88,11 +88,19 @@ textarea {
     padding: 0 2rem;
 }
 
-.submit-row input {
+.submit-row input , .post-update{
     background-color: #b9c6d6;
     border: none;
     padding: 0.5rem 1.5rem;
     border-radius: 8px;
+}
+
+.post-delete{
+    background-color: #9babbf;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+
 }
 
 .post-card-container{
@@ -111,11 +119,20 @@ textarea {
     font-weight:lighter;
     font-size:medium;
     padding-left: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
 }
 .post-published {
     justify-self: right;
     font-size: small;
+}
+
+.post-title-container { 
+    display: flex;
+    justify-content: space-between;
 }
 
 .flower-1 img {
@@ -125,3 +142,38 @@ textarea {
     left: -100px;
     z-index: -1;
 }
+
+.post-image, .post-image-default{
+    text-align: center;
+}
+
+.post-image-default img{ 
+    width: 75px;
+}
+
+.post-image img{ 
+    width: 150px;
+}
+
+.post-more { 
+    float: right;
+}
+.post-more a , .post-update a, .post-delete a{ 
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
+.post-image-upload img{
+    width: 150px;
+}
+
+.post-actions-container{
+    display: flex;
+    justify-content: right;
+}
+
+.post-update , .post-delete { 
+    margin: 0 0.75rem;
+}
+

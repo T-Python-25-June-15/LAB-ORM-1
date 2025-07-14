@@ -1,0 +1,35 @@
+{% extends 'main/base.html'%}
+
+{% block title%}
+Update Post
+{% endblock %}
+
+{% block main-title%}
+Update Post
+{% endblock %}
+
+{% block content %}
+<div class="form_container">
+    <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="input-row">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Post Title..." value="{{post.title}}" required>
+        </div>
+        <div class="input-row">
+            <label for="content">Content:</label>
+            <textarea type="" id="content" name="content" placeholder="Post Content..." required>{{post.content}}</textarea>
+        </div>
+        <div class="input-row">
+            <label for="image">Image:</label>
+            <div class="post-image-upload">
+                <img src="{{post.image.url}}">
+                <input type="file" id="image" name="image">
+            </div>
+        </div>
+        <div class="submit-row">
+            <input type="submit" value="Update"></button>
+        </div>    
+    </form>
+</div>
+{% endblock %}
