@@ -2,14 +2,23 @@
 
 {% block content %}
 <h1>Latest Posts</h1>
-{% for post in posts %}
-    <div>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
-        <small>Published at: {{ post.published_at }}</small>
-        <hr>
-    </div>
-{% empty %}
-    <p>No posts yet.</p>
-{% endfor %}
+
+<div class="card-grid">
+    {% for post in posts %}
+        <div class="card">
+            <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="Post Image">
+            {% endif %}
+
+            <p><a href="{% url 'post_detail' post.id %}">Click to read more...</a></p>
+            <small>Published at: {{ post.published_at }}</small><br><br>
+
+            <a href="{% url 'post_detail' post.id %}" class="btn">View Details</a>
+        </div>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+</div>
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="Post Image" width="400"><br>
+    {% endif %}
+
+    <p>{{ post.content }}</p>
+    <small>Published at: {{ post.published_at }}</small><br><br>
+
+    <a href="{% url 'edit_post' post.id %}" class="btn">Edit</a>
+    <a href="{% url 'delete_post' post.id %}" class="btn">Delete</a>
+
+    <a href="{% url 'home' %}" class="btn">← Back to Home</a>
+{% endblock %}
