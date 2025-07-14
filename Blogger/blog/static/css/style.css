@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0 20px;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 15px 20px;
+}
+
+header h1, header nav a {
+    display: inline-block;
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
