@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h2>Latest Posts</h2>
+    {% for post in posts %}
+        <div class="post">
+            <img src="{{ post.poster.url}}" class="w-100 ">
+            <a href="{% url 'main:blog_detail_view' post.id %}"><h3>{{ post.title }}</h3></a>
+            <small>Published at: {{ post.published_at }}</small>
+        </div>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+{% endblock %}
