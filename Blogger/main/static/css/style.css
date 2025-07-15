@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Parastoo:wght@400..700&display=swap');
+
+* { 
+    padding: 0;
+    margin: 0;
+}
+body { 
+    background-color: #faf6ed;
+    font-family: 'Parastoo'
+}
+
+.top-banner-container { 
+    background-color: #b7c8d8;
+    height: 4vh;
+    align-content: center;
+}
+
+.top-banner-elements-container{ 
+    justify-self: flex-end;
+    padding: 0px 1rem;
+}
+
+.top-banner-elements-container a { 
+    text-decoration: none;
+    color: black;
+    margin: 0 0.25rem;
+    padding: 0.25rem;
+}
+
+.top-banner-elements-container a:hover { 
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.main-header { 
+    justify-items: anchor-center;
+    padding: 2rem 0;
+}
+
+.logo a {
+    font-size: xxx-large;
+}
+
+.navigation-links-container { 
+    font-size: medium;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.navigation-links-container a {
+    margin: 0 0.5rem;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.content-container{
+    width: 75%;
+    justify-self: center;
+}
+
+.input-row{ 
+    display: flex;
+    margin: 0.75rem 0;
+}
+
+.input-row label { 
+    width: 25%;
+    text-align-last: right;
+    padding: 0 1rem;
+    font-weight: bold;
+
+}
+.input-row input, .input-row textarea { 
+    width: 75%;
+    border-radius: 8px;
+    padding: 0.25rem
+}
+
+textarea {
+    resize: none;
+    height: 40vh;
+
+}
+
+.submit-row{
+    height: 4vh;
+    place-content: center;
+    text-align-last: right;
+    padding: 0 2rem;
+}
+
+.submit-row input , .post-update{
+    background-color: #b9c6d6;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+}
+
+.post-delete{
+    background-color: #9babbf;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+
+}
+
+.post-card-container{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.post-title{ 
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.post-content { 
+    font-weight:lighter;
+    font-size:medium;
+    padding-left: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+.post-published {
+    justify-self: right;
+    font-size: small;
+}
+
+.post-draft { 
+    justify-self: right;
+    position: absolute;
+    right: 13%;
+    border-radius: 8px;
+    background-color: #b7c8d8;
+}
+
+.post-draft span{ 
+    padding: 1rem;
+    
+}
+
+.post-title-container { 
+    display: flex;
+    justify-content: space-between;
+}
+
+.flower-1 img {
+    width: 350px;
+    position: absolute;
+    top: 250px;
+    left: -100px;
+    z-index: -1;
+}
+
+.post-image, .post-image-default{
+    text-align: center;
+}
+
+.post-image-default img{ 
+    width: 75px;
+}
+
+.post-image img{ 
+    width: 150px;
+}
+
+.post-checkbox input {
+    width: 100%;
+}
+
+.post-more { 
+    float: right;
+}
+.post-more a , .post-update a, .post-delete a{ 
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
+.post-image-upload img{
+    width: 150px;
+}
+
+.post-actions-container{
+    display: flex;
+    justify-content: right;
+}
+
+.post-update , .post-delete { 
+    margin: 0 0.75rem;
+}
+

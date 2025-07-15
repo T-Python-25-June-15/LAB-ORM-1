@@ -1,0 +1,39 @@
+{% extends 'main/base.html'%}
+
+{% block title%}
+All Posts
+{% endblock %}
+
+{% block main-title%}
+All Posts
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+    <div class="post-card-container">
+        <div class="post-title-container">
+            <div class="post-title">
+                {{post.title}}
+            </div>
+            <div class="post-published">
+                {{post.published_at}}
+            </div>
+        </div>
+        <div class="post-content">
+            {{post.content}}
+        </div>
+        <div class="post-more">
+            <a href="{% url 'main:detail_post_view' post.pk %}">(Read more...)</a>
+        </div>
+        <br>
+        <div class="post-image{%if 'default' in post.image.url %}-default{%endif%}">
+            <img src="{{post.image.url}}">
+        </div>
+        {% if post.is_published == 0%}
+        <div class="post-draft">
+            <span>Draft</span>
+        </div>
+        {%endif%}
+    </div>
+    {% endfor %}
+{% endblock %}
