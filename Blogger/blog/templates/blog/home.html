@@ -14,11 +14,11 @@
             <a href="{% url 'post_detail' post.id %}"><h2 class="post-title mb-0">{{ post.title }}</h2></a>
         </div>
         <div class="card-body">
-            {% if post.image %}
-    <img src="{{ post.image.url }}" class="w-25">
-{% else %}
-    <img src="{% static 'images/default.jpg' %}" class="w-25">
-{% endif %}
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" class="w-25">
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}" class="w-25">
+                {% endif %}
             <br>
             <br>
             <div class="post-date mb-3">

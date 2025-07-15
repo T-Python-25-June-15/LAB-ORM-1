@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block title %}Detail{% endblock %}
-
+{% load static %}
 {% block content %}
 <div class="card mb-4">
         <div class="card-header">
@@ -10,7 +10,11 @@
                 Published at {{ post.published_at }}
             </div>
         <div class="card-body">
-            <img src="{{ post.image.url }}" class="w-100">
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" class="w-100">
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}" class="w-25">
+                {% endif %}
             <br>
             <div class="d-flex justify-content-end gap-2">
                 <a href="{% url 'post_update' post.id %}" class="btn btn-primary">Update</a>
