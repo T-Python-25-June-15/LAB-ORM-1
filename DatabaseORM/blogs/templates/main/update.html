@@ -14,7 +14,7 @@ Update - Page
 
 <div class="form-container">
   <div class="form-card">
-    <h2 class="form-title">Add New Blog</h2>
+    <h2 class="form-title">Update Blog</h2>
     <form method="POST" action="{% url 'blogs:blog_update_view' bloge.id %}" enctype="multipart/form-data">
       {% csrf_token %}
       <input type="text" placeholder="Title" name="title" class="form-control" required value="{{bloge.title}}">
