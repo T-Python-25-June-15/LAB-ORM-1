@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="container-fluid intro-section mb-5">
+    <div class="text-center">
+        <h1 class="mb-3">Welcome to Best Blogger</h1>
+        <p class="lead">Share your thoughts, read others, and explore the world through words.</p>
+    </div>
+</div>
+
+
+
+<div class="container mb-4">
+    <h2 class="fw-bold">Latest Blogs</h2>
+    <hr />
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for blog in blogs %}
+        
+
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <a href="{% url 'blogs:detailBlog_view' blog.id %}" class="text-decoration-none text-dark"><div class="card-body">
+                    <h5 class="card-title">{{ blog.title }}</h5>
+                    <img class="w-100" src="{{blog.image.url}}" />
+                    <p class="card-text text-muted small">{{ blog.published_at }}</p>
+                    <p class="card-text">{{ blog.content|truncatewords:"30"}} Read More</p>
+                </div></a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
