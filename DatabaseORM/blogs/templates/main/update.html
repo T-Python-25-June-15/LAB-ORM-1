@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Update - Page
+{% endblock %}
+
+{% block content %}
+
+  <!-- title = models.CharField(max_length=2048)
+  content = models.TextField()
+  is_published = models.BooleanField(default=True)
+  published_at = models.DateField(default=timezone.now) -->
+
+
+<div class="form-container">
+  <div class="form-card">
+    <h2 class="form-title">Add New Blog</h2>
+    <form method="POST" action="{% url 'blogs:blog_update_view' bloge.id %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" placeholder="Title" name="title" class="form-control" required value="{{bloge.title}}">
+      
+      <textarea placeholder="Article" name="content" class="form-control" rows="6" required>{{bloge.content}}</textarea>
+      
+      <select name="is_published" class="form-control">
+        <option>Select publish status</option>
+        <option value="1" {%if bloge.is_published == True %} selected {% endif %}>Published</option>
+        <option value="0" {%if bloge.is_published == False %} selected {% endif %}>Unpublished</option>
+      </select>
+      <input type="file" placeholder="Title" name="poster" class="form-control" required value="{{bloge.poster}}">
+      
+      <button type="submit" class="btn-submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

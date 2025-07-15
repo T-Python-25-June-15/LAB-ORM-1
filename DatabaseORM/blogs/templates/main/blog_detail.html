@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Home - Page
+{% endblock %}
+
+{% block content %}
+
+<div class="blog-detail-container">
+    <img src="{{bloge.poster.url}}" alt="">
+    <h1>{{bloge.title}}</h1>
+    <h1>{{bloge.content}}</h1>
+    <h1>{{bloge.published_at}}</h1>
+
+
+    <a class="btn" href="/blogs/update/{{bloge.id}}/">Update</a>
+    <a class="btn"  href="/blogs/delete/{{bloge.id}}/">Delete</a>
+
+</div>
+
+{% endblock %}
