@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Latest Posts{% endblock %}
+
+{% block content %}
+<h1 class="d-flex justify-content-center">Latest Posts</h1>
+<hr>
+<div class="row mt-3 row-cols-1 row-cols-md-3 g-4">
+    {% for post in posts %}
+    <div class="col">
+        <div class="d-flex flex-column justify-content-start align-items-start h-100 p-4 shadow gap-0">
+            {% if post.poster %}
+            <img src="{{ post.poster.url }}" class="w-100">
+            {% endif %}
+            <a href="{% url 'main:show_details_view' post.id  %}"><h2>{{ post.title }}</h2></a>
+            <p>{{ post.content }}</p>
+            <p><strong>Status:</strong> {{ post.is_published }}</p>
+            <p><strong>Date:</strong> {{ post.published_at }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<a href="{% url 'main:create_post_view' %}" class="btn btn-primary mt-3">Create New Post</a>
+{% endblock %}
