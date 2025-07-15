@@ -1,16 +1,15 @@
 {% extends 'main/base.html'%}
 
 {% block title%}
-Home
+All Posts
 {% endblock %}
 
 {% block main-title%}
-Home
+All Posts
 {% endblock %}
 
 {% block content %}
     {% for post in posts %}
-    {% if post.is_published == 1%}
     <div class="post-card-container">
         <div class="post-title-container">
             <div class="post-title">
@@ -30,7 +29,11 @@ Home
         <div class="post-image{%if 'default' in post.image.url %}-default{%endif%}">
             <img src="{{post.image.url}}">
         </div>
+        {% if post.is_published == 0%}
+        <div class="post-draft">
+            <span>Draft</span>
+        </div>
+        {%endif%}
     </div>
-    {% endif %}
     {% endfor %}
 {% endblock %}

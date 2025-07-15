@@ -7,15 +7,20 @@ def home_view(request:HttpRequest):
     return render(request,"main/index.html",{"posts":posts})
 
 def add_post(request:HttpRequest):
-    if request.method == "POST" and "image" in  request.FILES:
-        new_post = Post(title = request.POST["title"], content = request.POST["content"], image = request.FILES["image"])
+    if request.method == "POST":
+        title = request.POST["title"]
+        content = request.POST["content"]
+        is_published = 1 if "publish" in request.POST else 0
+
+        if "image" in request.FILES:
+            new_post = Post(title=title, content=content, is_published=is_published, image=request.FILES["image"],)
+        else:
+            new_post = Post(title=title, content=content, is_published=is_published)
+        print(request.POST)
         new_post.save()
         return redirect("main:home_view")
-    elif request.method == "POST" and "image" not in request.FILES:
-        new_post = Post(title = request.POST["title"], content = request.POST["content"])
-        new_post.save()
-        return redirect("main:home_view")
-    return render(request,"main/add_post.html")
+
+    return render(request, "main/add_post.html")
 
 def detail_post_view(request:HttpRequest, post_id:int):
     post = Post.objects.get(id = post_id)
@@ -26,6 +31,7 @@ def update_post_view(request:HttpRequest, post_id:int):
     if request.method == "POST":
         post.title = request.POST["title"]
         post.content = request.POST["content"]
+        post.is_published = 1 if "publish" in request.POST else 0
         if "image" in  request.FILES:
             post.image = request.FILES["image"]
         post.save()
@@ -36,3 +42,7 @@ def delete_post_view(request:HttpRequest, post_id:int):
     post = Post.objects.get(id = post_id)
     post.delete()
     return redirect("main:home_view")
+
+def all_posts_view(request:HttpRequest):
+    posts = Post.objects.all()
+    return render(request,"main/all_posts.html",{"posts":posts})

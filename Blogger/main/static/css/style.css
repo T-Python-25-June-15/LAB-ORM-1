@@ -11,7 +11,7 @@ body {
 
 .top-banner-container { 
     background-color: #b7c8d8;
-    height: 2.5vh;
+    height: 4vh;
     align-content: center;
 }
 
@@ -23,8 +23,14 @@ body {
 .top-banner-elements-container a { 
     text-decoration: none;
     color: black;
+    margin: 0 0.25rem;
+    padding: 0.25rem;
 }
 
+.top-banner-elements-container a:hover { 
+    border: 1px solid black;
+    border-radius: 8px;
+}
 
 .main-header { 
     justify-items: anchor-center;
@@ -130,6 +136,19 @@ textarea {
     font-size: small;
 }
 
+.post-draft { 
+    justify-self: right;
+    position: absolute;
+    right: 13%;
+    border-radius: 8px;
+    background-color: #b7c8d8;
+}
+
+.post-draft span{ 
+    padding: 1rem;
+    
+}
+
 .post-title-container { 
     display: flex;
     justify-content: space-between;
@@ -153,6 +172,10 @@ textarea {
 
 .post-image img{ 
     width: 150px;
+}
+
+.post-checkbox input {
+    width: 100%;
 }
 
 .post-more { 
