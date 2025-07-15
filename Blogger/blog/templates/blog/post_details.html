@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Post Details{% endblock %}
+
+{% block fileStyle %}
+
+<link rel="stylesheet" href="{% static 'css/post_details.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <img src="{{ post.poster.url }}" alt="{{ post.title }}">
+    <h1>{{post.title}}</h1>
+    <p class="content">{{post.content}}</p>
+    <p class="date">Published at: {{ post.published_at }}</p>
+
+    <div class="update-delete">
+        <a class="update" href="{% url 'blog:post_update_view' post.id %}">UPDATE</a>
+        <a class="delete" href="{% url 'blog:post_delete_view' post.id %}">DELETE</a>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+ 

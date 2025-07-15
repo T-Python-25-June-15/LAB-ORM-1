@@ -6,24 +6,23 @@
 {% block fileStyle %}
 
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<!-- <meta http-equiv="refresh" content="4"> -->
 
 {% endblock %}
 
 {% block content %}
 
 
-<div class="latest">
+<div class="posts">
 
-    <h2>Latest Posts</h2>
 
     {% if posts %}
     {% for post in posts %}
     
         <div class="post">
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.content }}</p>
+            <img src="{{post.poster.url}}" alt="blog Photo">
+            <a href="{% url 'blog:post_details_view' post.id %}"><h3>{{ post.title }}</h3></a>
             <p>Published at: {{ post.published_at }}</p>
-            <hr>
         </div>
     {% endfor %}
     {% else %}

@@ -1,8 +1,16 @@
-.latest {
-    width: 100%;
-    max-width: 800px;
+
+
+
+.posts {
     margin: auto;
     text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    row-gap: 25px;
+    min-width: 90%;
+    flex-wrap: wrap;
 }
 
 h2 {
@@ -12,16 +20,48 @@ h2 {
 }
 
 .post {
-    margin-bottom: 30px;
-    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 15px;
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .post h3 {
-    margin-bottom: 5px;
+    
+
     color: #111;
+    font-size: 23px;
 }
 
+.post a {
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+
 .post p {
-    margin: 5px 0;
+    padding-bottom: 8px;
     line-height: 1.6;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-weight: 550;
+    color: rgba(0, 0, 0, 0.342);
+}
+
+.post img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 7px;
+    width: 100%;
+    height: 230px;
 }

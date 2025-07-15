@@ -16,17 +16,17 @@
         {% csrf_token %}
 
         <label for="id_title">Title:</label><br>
-        <input type="text" name="title" id="id_title" placeholder="Enter a title" style="text-align: center; font-family: monospace;" required><br><br>
+        <input type="text" name="title" id="id_title" placeholder="Enter a title" value="{{post.title}}" style="text-align: center; font-family: monospace;" required><br><br>
 
         <label for="id_content">Content:</label><br>
-        <textarea name="content" id="id_content" rows="6" placeholder="What You want to say..." style="text-align: center;"></textarea><br><br>
+        <textarea name="content" id="id_content" rows="6" placeholder="What You want to say..." style="text-align: center;">{{post.content}}</textarea><br><br>
 
         <div class="block-image">
         <label for="poster">Choose Image:</label>
         <input type="file" name="poster" id="poster" >
         </div>
 
-        <button type="submit" style="font-family: monospace;">Add the Post</button>
+        <button type="submit" style="font-family: monospace;">Update the Post</button>
     </form>
 </div>
 
