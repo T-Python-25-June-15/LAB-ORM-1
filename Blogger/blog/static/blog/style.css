@@ -123,8 +123,8 @@ form {
 
 /* Smaller image on the side */
 .post-image {
-  width: 150px;
-  height: auto;
+  width: 160px;
+  height: 200px;
   border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;

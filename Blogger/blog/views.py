@@ -5,7 +5,7 @@ from .forms import PostForm
 # Create your views here.
 
 def home_view(request):
-    posts = Post.objects.filter(is_published=True).order_by('-published_at')
+    posts = Post.objects.filter(is_published=True).order_by('-published_at')#.exclude(content__contains="barcelona")
     return render(request, 'blog/home.html', {'posts': posts})
 
 def add_post_view(request):
