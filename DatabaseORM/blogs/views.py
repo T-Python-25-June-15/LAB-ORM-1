@@ -19,7 +19,7 @@ def add_blog(request:HttpRequest):
     if request.POST["is_published"] == "0":
       status = False
       
-    new_blog = Blogger(title=request.POST["title"], content=request.POST["content"], is_published = status)
+    new_blog = Blogger(title=request.POST["title"], content=request.POST["content"], is_published = status, poster=request.FILES["poster"])
     new_blog.save()
 
 

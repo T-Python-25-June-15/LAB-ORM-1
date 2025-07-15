@@ -11,6 +11,7 @@ Home - Page
 
         {% if blog.is_published == True %}
         <div class="blog-card">
+            <img class="blog-image" src="{{blog.poster.url}}">
             <h2 class="blog-title">{{blog.title}}</h2>
             <p class="blog-snippet">{{blog.content}}</p>
             <p class="blog-snippet" style="color: cadetblue; font-weight: 700; font-size: 12px;">{{blog.published_at}}</p>

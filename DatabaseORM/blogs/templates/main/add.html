@@ -15,18 +15,19 @@ Home - Page
 <div class="form-container">
   <div class="form-card">
     <h2 class="form-title">Add New Blog</h2>
-    <form method="POST" action="{% url 'blogs:add_blog_new' %}">
+    <form method="POST" action="{% url 'blogs:add_blog_new' %}" enctype="multipart/form-data">
       {% csrf_token %}
       <input type="text" placeholder="Title" name="title" class="form-control" required>
-
+      
       <textarea placeholder="Article" name="content" class="form-control" rows="6" required></textarea>
-
+      
       <select name="is_published" class="form-control">
         <option selected>Select publish status</option>
         <option value="1">Published</option>
         <option value="0">Unpublished</option>
       </select>
-
+      <input type="file" placeholder="Title" name="poster" class="form-control" required>
+      
       <button type="submit" class="btn-submit">Submit</button>
     </form>
   </div>
