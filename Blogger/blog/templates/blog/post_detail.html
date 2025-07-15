@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+<div class="card mb-4">
+        <div class="card-header">
+            <h2 class="post-title mb-0">{{ post.title }}</h2>
+        </div>
+        <div class="post-date mb-3">
+                Published at {{ post.published_at }}
+            </div>
+        <div class="card-body">
+            <img src="{{ post.image.url }}" class="w-100">
+            <br>
+            <div class="d-flex justify-content-end gap-2">
+                <a href="{% url 'post_update' post.id %}" class="btn btn-primary">Update</a>
+                <a href="{% url 'post_delete' post.id %}" class="btn btn-danger">Delete</a>
+    
+            </div>
+            <div class="post-content">
+                {{post.content}}
+            </div>
+        </div>
+    </div>
+
+ 
+{% endblock %}

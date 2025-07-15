@@ -3,7 +3,13 @@ body {
     line-height: 1.6;
     color: #333;
 }
-
+a{
+    text-decoration: none !important;
+}
+a h2:hover{
+    color: rgb(35, 137, 57) !important;
+    transition: 0.5s;
+}
 .container {
     max-width: 800px;
 }
