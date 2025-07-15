@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% block title %}Edit Post{% endblock %}
+{% block content %}
+<div class="container">
+  <h1 class="heading mb-4">Edit Post</h1>
+
+
+  <form method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-3">
+    {% csrf_token %}
+
+
+
+    <input type="text" name="title" value="{{ post.title }}" class="form-control" required>
+    <textarea name="content" class="form-control" rows="5" required>{{ post.content }}</textarea>
+    <img src="{{ post.image.url }}" class="img-thumbnail w-25" alt="Current Image">
+    <input type="file" name="image" class="form-control">
+
+    
+    <button type="submit" class="btn btn-success w-25">Update</button>
+  </form>
+</div>
+{% endblock %}
