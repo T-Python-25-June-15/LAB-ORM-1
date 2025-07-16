@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<h2 class="text-xl font-bold mb-4">Latest Posts</h2>
+<div class="space-y-4">
+    {% for post in posts %}
+    <div class="bg-white p-4 shadow rounded">
+        <h3 class="text-lg font-semibold">{{ post.title }}</h3>
+        <p class="text-gray-700">{{ post.content }}</p>
+        <p class="text-sm text-gray-400">{{ post.published_at }}</p>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" class="w-full max-h-64 object-cover rounded mb-2">
+        {% endif %}
+        <!-- <p class="text-sm text-gray-500">Published: {{ post.is_published }}</p> -->
+        {% if post.is_published %}
+        <span class="inline-block mt-2 px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Published</span>
+    {% else %}
+        <span class="inline-block mt-2 px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">Unpublished</span>
+    {% endif %}
+    </div>
+    {% empty %}
+    <p>No posts yet. <a href="{% url 'posts:create_posts' %}" class="text-blue-600 underline">Add one</a></p>
+    {% endfor %}
+</div>
+{% endblock %}
