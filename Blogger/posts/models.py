@@ -14,4 +14,6 @@ class Post(models.Model):#hey django, please turn this class inti a db table and
     content = models.TextField()
     is_published = models.BooleanField(default=True)
     published_at = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to="posts_images/", null=True, blank=True)
+
     #after creating that run the makemigration and migrate commands 

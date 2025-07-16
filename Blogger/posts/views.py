@@ -7,7 +7,8 @@ def create_posts(request: HttpRequest):
     if request.method == "POST":
         title = request.POST.get("title")
         content = request.POST.get("content")
-        Post.objects.create(title=title, content=content)
+        image = request.FILES.get("image")
+        Post.objects.create(title=title, content=content, image= image)
         return redirect("main:home_view")  # after creation, go back home
 
     return render(request, "posts/create.html")
