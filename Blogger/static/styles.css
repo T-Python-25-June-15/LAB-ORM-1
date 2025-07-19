@@ -179,7 +179,7 @@ footer {
     margin-top: 40px;
     text-align: center;
     font-size: 14px;
-    color: #777;
+    color: #333;
 }
 
 footer p {
@@ -243,4 +243,16 @@ img {
 
 .cancel-btn:hover {
     background-color: #f0f0f0;
+}
+.details-btn {
+    padding: 1px 19px;
+    font-size: 16px;
+    border-radius: 35px;
+    background-color: #0f0f0f;
+    color: #000000;
+    padding: 0;
+    cursor: pointer;
+}
+.details-btn:hover{
+    background-color: #000000;
 }
